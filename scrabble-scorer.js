@@ -70,12 +70,12 @@ function transform() {
 
 const newPointStructure = transform(oldPointStructure);
 
-function scrabbleScorer(word) {
-   word = word.toLowerCase();
+function scrabbleScorer(userWord) {
+   userWord = userWord.toLowerCase();
    let score = '';
-   for (i = 0; i < word.length; i++){
+   for (i = 0; i < userWord.length; i++){
       for (const letter in newPointStructure) {
-         if (letter === word[i]) {
+         if (letter === userWord[i]) {
             score = Number(score) + Number(newPointStructure[letter]);
          }
       }
